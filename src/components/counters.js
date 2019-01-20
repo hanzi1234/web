@@ -2,29 +2,19 @@ import React, { Component } from 'react';
 import Counter from "./counter";
 
 class counters extends Component{ 
-    
-
-
-// addCounters(e)
-// {
-// const counters = [...this.state.counters];
-// counters.push({id:this.state.counters});
-// this.setState(counters);
-// var _id = this.state.counters;
-// _id++;
-// this.setState({id=_id});
-// }
-
    render() { 
 return ( 
 <div>
-<h1>list</h1>
-
+<center><h1>Tasks list</h1></center>
 {this.props.counters.map((counter)=>
-<Counter  />)}
-
+<Counter 
+key={counter.id}
+txt={counter.text}
+no={counter.index}
+onSave={this.props.onSavefunction}
+delete={this.props.delete}
+/>)}
 </div>  );
     }
 }
- 
 export default counters;
